@@ -5,33 +5,38 @@ import TextField from 'material-ui/TextField';
 import React from 'react';
 
 class Login extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            phoneNum:''
+        this.state = {
+            phoneNum: ''
         }
     }
+
     render() {
         return (
             <div>
                 <MuiThemeProvider>
                     <div>
                         <AppBar
-                            title="Login"
+                            title="PetQuest Login"
                         />
                         <TextField
                             hintText="Enter your phone number"
                             floatingLabelText="Phone Number"
-                            onChange = {(event,newValue) => this.setState({phoneNum:newValue})}
+                            onChange={(event, newValue) => this.setState({phoneNum: newValue})}
                         />
                         <br/>
-                        <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+                        <RaisedButton label="Sign Up" primary={true} style={style}
+                                      onClick={(event) => this.handleClick(event)}/>
+                        <RaisedButton label="Login" primary={true} style={style}
+                                      onClick={(event) => this.handleClick(event)}/>
                     </div>
                 </MuiThemeProvider>
             </div>
         );
     }
 }
+
 const style = {
     margin: 15,
 };
