@@ -4,10 +4,9 @@ import Main from './components/main';
 import './App.css';
 
 // firebase stuff
-import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from './back-end/firebaseConfig';
+import config from './components/firebase';
 
 function App() {
   return (
