@@ -3,9 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import React from 'react';
-import {Redirect} from 'react-router-dom'
-import {Toaster, Intent} from '@blueprintjs/core'
-import config from "./firebase";
+import {config} from "./firebase";
 
 class Login extends React.Component {
     constructor(props) {
@@ -29,14 +27,6 @@ class Login extends React.Component {
             // ...
             alert("Invalid phone number!");
         });
-    }
-
-    handleSignUp(event) {
-        alert('Button clicked!');
-    }
-
-    handleLogin(event) {
-        alert('Button clicked!');
     }
 
     render() {
