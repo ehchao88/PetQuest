@@ -90,7 +90,4 @@ const style = {
   margin: 15
 };
 
-const textStyle = {
-  marginTop: 9
-};
 export default Login;

@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import firebase from "firebase";
 import logo from "../assets/logo.png";
 
-class Home extends React.Component {
-  render() {
-    return (true ? <Feed /> : <Landing />);
-    // hardcode for now
-  }
+const TOKEN_KEY = "tokentokentoken";
+
+function Home(props) {
+  return localStorage.getItem(TOKEN_KEY) ? <Feed /> : <Landing />;
+  // If the user is logged in, return their feed.
+  // Otherwise, return the landing page.
 }
 
 function Landing(props) {
