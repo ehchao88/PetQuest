@@ -3,6 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 // npm install materialize-css@next
 import 'materialize-css/dist/css/materialize.min.css'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
     render() {
@@ -11,7 +12,7 @@ class Home extends React.Component {
                 <h1 className="display-2">PetQuest</h1>
                 <p className="lead">The virtual pet to-do list</p>
                 <div className="btn-group mt-12" role="group" aria-label="Callout Buttons">
-                    <button type="button" className="btn btn-primary btn-danger" href={"/login"}>Login</button>
+                    <Link to="/login" className="btn btn-primary">Login</Link>
                 </div>
             </div>
         </>;
