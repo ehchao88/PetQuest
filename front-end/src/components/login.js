@@ -1,8 +1,9 @@
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import RaisedButton from "material-ui/RaisedButton";
-import TextField from "material-ui/TextField";
-import React from "react";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import React from 'react';
+import {Redirect} from 'react-router-dom';
 import config from "./firebase";
 import * as firebase from "firebase";
 import './style/login.css';
@@ -38,12 +39,18 @@ class Login extends React.Component {
         var code = document.getElementById('confirmation-code').value;
         window.confirmationResult.confirm(code).then(function (result) {
             // User signed in successfully.
-            var user = result.user;
+            this.renderRedirect();
             // ...
         }).catch(function (error) {
             // User couldn't sign in (bad verification code?)
             // ...
         });
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/dashboard' />
+        }
     }
 
     render() {
