@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import React from 'react';
 import config from "./firebase";
 import * as firebase from "firebase";
+import './style/login.css';
 
 class Login extends React.Component {
     constructor(props) {
@@ -17,8 +18,8 @@ class Login extends React.Component {
     phoneSignIn() {
         var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
         var phoneNumber = document.getElementById('phone-number').value;
-        config.auth().signInWithPhoneNumber(phoneNumber.toString(), appVerifier)
-            .then(function (confirmationResult) {
+        config.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+            .then(confirmationResult => {
                 alert('Enter your confirmation code.');
                 // SMS sent. Prompt user to type the code from the message, then sign the
                 // user in with confirmationResult.confirm(code).
