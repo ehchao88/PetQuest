@@ -1,8 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
-import firebase from "firebase";
+import firebase from "firebase";'
 import logo from "../assets/logo.png";
+import Table from '@material-ui/core/Table';
 
 const TOKEN_KEY = "tokentokentoken";
 
@@ -47,10 +48,10 @@ class Feed extends React.Component {
   }
 
   render() {
-    const numbers = [1, 2, 3, 4, 5];
-    const listItems = numbers.map(number => <li>{number}</li>);
+//    const numbers = [1, 2, 3, 4, 5];
+//    const listItems = numbers.map(number => <li>{number}</li>);
 
-    return <ul>{listItems}</ul>;
+    return <Table>{listItems}</Table>;
   }
 }
 
