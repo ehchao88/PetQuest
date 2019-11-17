@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="666e9f33-576c-4ef0-b691-78212ecf6dbd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/style/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/public/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +44,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -87,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573945069708</updated>
-      <workItem from="1573977081863" duration="1737000" />
+      <workItem from="1573977081863" duration="4081000" />
     </task>
     <servers />
   </component>
@@ -106,5 +114,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

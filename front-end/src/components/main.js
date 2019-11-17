@@ -1,7 +1,10 @@
 import React from 'react'
 import Home from './home';
 import Login from './login';
+import Dashboard from './dashboard';
+import {AuthProvider} from "./Auth";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+//import PrivateRoute from './components/PrivateRoute';
 
 const Main = () => (
     <Router>

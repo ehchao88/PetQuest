@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 
-export const TOKEN_KEY = 'tokentokentoken';
+const TOKEN_KEY = 'tokentokentoken';
 
 export const login = () => {
     localStorage.setItem(TOKEN_KEY, 'TestLogin');

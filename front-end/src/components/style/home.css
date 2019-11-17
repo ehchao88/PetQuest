@@ -1,0 +1,12 @@
+#header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: auto;
+}
+
+body {
+    font-family: Avenir, sans-serif;
+    font-size: 64px;
+}
