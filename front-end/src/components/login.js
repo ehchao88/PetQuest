@@ -18,8 +18,9 @@ class Login extends React.Component {
     phoneSignIn() {
         var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
         var phoneNumber = document.getElementById('phone-number').value;
+        console.log(phoneNumber);
         firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-            .then(function (confirmationResult) {
+            .then(confirmationResult => {
                 alert('Enter your confirmation code.');
                 // SMS sent. Prompt user to type the code from the message, then sign the
                 // user in with confirmationResult.confirm(code).
