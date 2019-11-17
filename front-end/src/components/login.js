@@ -3,7 +3,8 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import React from 'react';
-import {config} from "./firebase";
+import config from "./firebase";
+import * as firebase from "firebase";
 
 class Login extends React.Component {
     constructor(props) {
@@ -11,12 +12,13 @@ class Login extends React.Component {
         this.state = {
             phoneNum: ''
         };
+
     }
 
     phoneSignIn() {
-        var appVerifier = new config.auth.RecaptchaVerifier('recaptcha-container');
+        var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
         var phoneNumber = document.getElementById('phone-number').value;
-        config.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+        firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
             .then(function (confirmationResult) {
                 alert('Enter your confirmation code.');
                 // SMS sent. Prompt user to type the code from the message, then sign the
