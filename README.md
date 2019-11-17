@@ -1,9 +1,5 @@
-# PetQuest
-<<<<<<< Updated upstream
-### Virtual pet to-do list application
+# PetQuest (BostonHacks 2019)
+### A virtual pet to-do list application
 
-Eric Chao, Nicole Danuwidjaja, Vera Kong, Nat Hsu, Brandon Liang
-BostonHacks 2019
-=======
+Contributors: Eric Chao, Nicole Danuwidjaja, Vera Kong, Nat Hsu, Brandon Liang
 
->>>>>>> Stashed changes
