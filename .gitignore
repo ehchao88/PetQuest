@@ -132,3 +132,4 @@ dmypy.json
 
 # backend Firebase secrets
 pet_secrets.json
+firebase_secrets.env
