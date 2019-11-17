@@ -3,11 +3,12 @@ import json
 import re
 from flask import Flask, request, redirect, url_for, flash, abort
 from scripts.SendText import *
+from scripts.pet_crud import *
 import firebase_admin
 from firebase_admin import db, credentials, firestore
 
-cred = credentials.Certificate('')
-firebase_admin.initialize_app(cred)
+cred = credentials.Certificate('/home/eric/Documents/pet_secrets.json')
+#firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 users_ref = db.collection(u'users')
@@ -17,7 +18,7 @@ pets_ref = db.collection(u'pets')
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-@app.route('/reminders', methods=['GET','POST'])
+@app.route('/reminders', methods=['POST'])
 def remind():
     if request.method == 'POST':
         if request.form['send'] == 'send':
@@ -25,7 +26,8 @@ def remind():
             for number in numbers:
                 phone_number = number.id
                 if re.match('\+1[0-9]{10}',phone_number):
-                    send_reminder(phone_number)
+                    tasks = get_tasks(phone_number)
+                    send_reminder(phone_number, tasks)
             return json.dumps({'result':'success'})
         else:
             return json.dumps({'result':'fail'})
