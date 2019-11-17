@@ -4,7 +4,6 @@ import Main from './components/main';
 import './App.css';
 
 // firebase stuff
-import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import config from './components/firebase';
 
