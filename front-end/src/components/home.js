@@ -2,7 +2,6 @@ import React from 'react';
 // npm install react-bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
 // npm install materialize-css@next
-import 'materialize-css/dist/css/materialize.min.css'
 import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
