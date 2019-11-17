@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
     <meta
-      name="description"
-      content="Web site created using create-react-app"
+            name="description"
+            content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="apple-touch-icon" href="logo192.png"/>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,19 +25,55 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>PetQuest</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.4.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.4.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.4.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <script type="text/javascript">
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+
+        initApp = function () {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    // User is signed in.
+                    var phoneNumber = user.phoneNumber;
+                    user.getIdToken().then(function (accessToken) {
+                        document.getElementById('sign-in-status').textContent = 'Signed in';
+                        document.getElementById('sign-in').textContent = 'Sign out';
+                        document.getElementById('account-details').textContent = JSON.stringify({
+                            phoneNumber: phoneNumber,
+                        }, null, '  ');
+                    });
+                } else {
+                    // User is signed out.
+                    document.getElementById('sign-in-status').textContent = 'Signed out';
+                    document.getElementById('sign-in').textContent = 'Sign in';
+                    document.getElementById('account-details').textContent = 'null';
+                }
+            }, function (error) {
+                console.log(error);
+            });
+        };
+
+        window.addEventListener('load', function () {
+            initApp();
+        });
+    </script>
+</head>
+<body>
+<div id="sign-in-status"></div>
+<div id="sign-in"></div>
+<pre id="account-details"></pre>
+<div id="root"></div>
+</body>
 </html>

@@ -9,7 +9,15 @@ class Login extends React.Component {
         super(props);
         this.state = {
             phoneNum: ''
-        }
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+        }));
     }
 
     render() {
