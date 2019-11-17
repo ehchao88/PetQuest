@@ -39,6 +39,7 @@ class Login extends React.Component {
                         <TextField
                             hintText="ex: (555) 555-5555"
                             floatingLabelText="Phone Number"
+                            style={textStyle}
                             onChange={(event, newValue) => this.setState({phoneNum: newValue})}
                         />
                         <br/>
@@ -55,5 +56,9 @@ class Login extends React.Component {
 
 const style = {
     margin: 15,
+};
+
+const textStyle = {
+    marginTop: 9
 };
 export default Login;
