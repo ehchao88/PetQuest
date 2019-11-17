@@ -5,6 +5,7 @@ import TextField from "material-ui/TextField";
 import React from "react";
 import config from "./firebase";
 import * as firebase from "firebase";
+import './style/login.css';
 
 class Login extends React.Component {
   constructor(props) {
