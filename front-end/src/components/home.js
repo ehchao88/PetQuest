@@ -7,7 +7,8 @@ import logo from "../assets/logo.png";
 const TOKEN_KEY = "tokentokentoken";
 
 function Home(props) {
-  return localStorage.getItem(TOKEN_KEY) ? <Feed /> : <Landing />;
+  const user = firebase.auth().currentUser;
+  return user ? <Feed /> : <Landing />;
   // If the user is logged in, return their feed.
   // Otherwise, return the landing page.
 }
