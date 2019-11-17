@@ -87,6 +87,7 @@ class Login extends React.Component {
 }
 
 const style = {
-    margin: 15,
+  margin: 15
 };
+
 export default Login;
