@@ -38,36 +38,39 @@
 
     <script type="text/javascript">
         // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
-
-        initApp = function () {
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    // User is signed in.
-                    var phoneNumber = user.phoneNumber;
-                    user.getIdToken().then(function (accessToken) {
-                        document.getElementById('sign-in-status').textContent = 'Signed in';
-                        document.getElementById('sign-in').textContent = 'Sign out';
-                        document.getElementById('account-details').textContent = JSON.stringify({
-                            phoneNumber: phoneNumber,
-                        }, null, '  ');
-                    });
-                } else {
-                    // User is signed out.
-                    document.getElementById('sign-in-status').textContent = 'Signed out';
-                    document.getElementById('sign-in').textContent = 'Sign in';
-                    document.getElementById('account-details').textContent = 'null';
-                }
-            }, function (error) {
-                console.log(error);
-            });
-        };
-
-        window.addEventListener('load', function () {
-            initApp();
-        });
+        // import * as firebaseui from "firebase";
+        // import * as firebase from "firebase";
+        //
+        // var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // // The start method will wait until the DOM is loaded.
+        // ui.start('#firebaseui-auth-container', uiConfig);
+        //
+        // initApp = function () {
+        //     firebase.auth().onAuthStateChanged(function (user) {
+        //         if (user) {
+        //             // User is signed in.
+        //             var phoneNumber = user.phoneNumber;
+        //             user.getIdToken().then(function (accessToken) {
+        //                 document.getElementById('sign-in-status').textContent = 'Signed in';
+        //                 document.getElementById('sign-in').textContent = 'Sign out';
+        //                 document.getElementById('account-details').textContent = JSON.stringify({
+        //                     phoneNumber: phoneNumber,
+        //                 }, null, '  ');
+        //             });
+        //         } else {
+        //             // User is signed out.
+        //             document.getElementById('sign-in-status').textContent = 'Signed out';
+        //             document.getElementById('sign-in').textContent = 'Sign in';
+        //             document.getElementById('account-details').textContent = 'null';
+        //         }
+        //     }, function (error) {
+        //         console.log(error);
+        //     });
+        // };
+        //
+        // window.addEventListener('load', function () {
+        //     initApp();
+        // });
     </script>
 </head>
 <body>
