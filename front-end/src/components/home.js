@@ -1,14 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
-import firebase from "firebase";'
+import firebase from "firebase";
 import logo from "../assets/logo.png";
-import Table from '@material-ui/core/Table';
+// import Table from '@material-ui/core/Table';
 
 class Home extends React.Component {
   render() {
-    return (true ? <Feed /> : <Landing />);
-    // hardcode for now
+      return <Landing/>;
+    // return (true ? <Feed /> : <Landing />);
   }
 }
 
@@ -45,12 +45,12 @@ class Feed extends React.Component {
     const defaultDatabase = firebase.database().ref("users");
   }
 
-  render() {
+  // render() {
 //    const numbers = [1, 2, 3, 4, 5];
 //    const listItems = numbers.map(number => <li>{number}</li>);
 
-    return <Table>{listItems}</Table>;
-  }
+    // return <Table>{listItems}</Table>;
+  // }
 }
 
 const imageStyle = {
