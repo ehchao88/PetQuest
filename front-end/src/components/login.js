@@ -12,6 +12,14 @@ class Login extends React.Component {
         }
     }
 
+    handleSignUp(event) {
+        alert('Button clicked!');
+    }
+
+    handleLogin(event) {
+        alert('Button clicked!');
+    }
+
     render() {
         return (
             <div>
@@ -21,15 +29,15 @@ class Login extends React.Component {
                             title="PetQuest Login"
                         />
                         <TextField
-                            hintText="Enter your phone number"
+                            hintText="ex: (555) 555-5555"
                             floatingLabelText="Phone Number"
                             onChange={(event, newValue) => this.setState({phoneNum: newValue})}
                         />
                         <br/>
                         <RaisedButton label="Sign Up" primary={true} style={style}
-                                      onClick={(event) => this.handleClick(event)}/>
+                                      onClick={event => this.handleSignUp(event)}/>
                         <RaisedButton label="Login" primary={true} style={style}
-                                      onClick={(event) => this.handleClick(event)}/>
+                                      onClick={event => this.handleLogin(event)}/>
                     </div>
                 </MuiThemeProvider>
             </div>
