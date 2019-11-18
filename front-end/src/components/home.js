@@ -1,17 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
-import firebase from "firebase";'
+import firebase from "firebase";
 import logo from "../assets/logo.png";
-import Table from '@material-ui/core/Table';
+// import Table from '@material-ui/core/Table';
 
-const TOKEN_KEY = "tokentokentoken";
-
-function Home(props) {
-  const user = firebase.auth().currentUser;
-  return user ? <Feed /> : <Landing />;
-  // If the user is logged in, return their feed.
-  // Otherwise, return the landing page.
+class Home extends React.Component {
+  render() {
+      return <Landing/>;
+    // return (true ? <Feed /> : <Landing />);
+  }
 }
 
 function Landing(props) {
@@ -47,12 +45,12 @@ class Feed extends React.Component {
     const defaultDatabase = firebase.database().ref("users");
   }
 
-  render() {
+  // render() {
 //    const numbers = [1, 2, 3, 4, 5];
 //    const listItems = numbers.map(number => <li>{number}</li>);
 
-    return <Table>{listItems}</Table>;
-  }
+    // return <Table>{listItems}</Table>;
+  // }
 }
 
 const imageStyle = {
